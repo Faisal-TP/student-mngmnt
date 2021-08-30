@@ -364,7 +364,7 @@ def add_student_save(request):
                 user = CustomUser.objects.create_user(username=username, password=password, email=email, first_name=first_name, last_name=last_name, user_type=3)
                 user.students.address = address
 
-                course_obj = Courses.objects.get(id=course_id)
+                course_obj = Courses.objects.all()
                 user.students.course_id = course_obj
 
                 session_year_obj = SessionYearModel.objects.get(id=session_year_id)
